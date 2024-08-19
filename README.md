@@ -65,15 +65,15 @@ Possible values for Performance mode are:
   > Even Linux failed to drive the cameras on SP7 (IPU4), SP6 and before (IPU3) might be possible but I do not have the device.
 
 ## Important
-Surface Pro 7 seems to have issues for macOS to recognize properly the battery in System Preference. PM Profile in FACP is tablet not laptop.
+Surface Pro 7 and Book 3 seem to have issues for macOS to recognize properly the battery in System Preferences. PM Profile in FACP is tablet not laptop.
 
-Thus, a SSDT patch is needed.
+Thus, an ACPI patch is needed:
 
-ACPI table: FACP
-
+```
+Table Signature: 46414350
 Find: 00080900 B2000000 F0F1
-
 Replace: 00020900 B2000000 F0F1
+```
 
 Thanks to @he1833
 
